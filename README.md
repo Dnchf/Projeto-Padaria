@@ -35,11 +35,13 @@ Desenvolver uma plataforma onde os clientes possam:
 ---
 
 ## 🧰 Tecnologias Utilizadas 
-<img src="https://img.shields.io/badge/-Html5-76240e?style=flat&logo=Html5" height="40"/> <img src="https://img.shields.io/badge/-Css3-00009b?style=flat&logo=Css3" height="40"/> <img src="https://img.shields.io/badge/-VS%20Code-007ACC?style=flat&logo=visual-studio-code" height="40"/> <img src="https://img.shields.io/badge/-JavaScript-ffae19?style=flat&logo=JavaScript" height="40 "/>  <img src="https://img.shields.io/badge/-PHP-004085?style=flat&logo=PHP" height="40 "/>
-
+<img src="https://img.shields.io/badge/-Html5-76240e?style=flat&logo=Html5" height="40"/> <img src="https://img.shields.io/badge/-Css3-00009b?style=flat&logo=Css3" height="40"/> <img src="https://img.shields.io/badge/-VS%20Code-007ACC?style=flat&logo=visual-studio-code" height="40"/> <img src="https://img.shields.io/badge/-JavaScript-ffae19?style=flat&logo=JavaScript" height="40 "/>  <img src="https://img.shields.io/badge/-PHP-004085?style=flat&logo=PHP" height="40 "/>  <img src="https://img.shields.io/badge/-Figma-590090?style=flat&logo=Figma" height="40 "/> 
 
 ---
+## 🥖 Imgens do Projeto
+<img src="https://github.com/user-attachments/assets/4a5decec-978d-4afa-ac7f-48e367f07d0a" alt="Imagem 1" width="300"/> <img src="https://github.com/user-attachments/assets/2a99238f-5106-4ee4-a337-b11a90321e0a" alt="Imagem 2" width="300"/>  <img src="https://github.com/user-attachments/assets/f65a0d77-dd4f-49d1-96eb-ed5e3ae7f0e2" alt="Imagem 3" width="300"/>  <img src="https://github.com/user-attachments/assets/97c5d9d0-dcaa-4950-bcb1-9df9ff5a8cc4" alt="Imagem 2" width="300"/>  <img src="https://github.com/user-attachments/assets/514a467e-68c0-40ec-8dda-843fb85b15b1" alt="Imagem 2" width="300"/>
 
+---
 ## 👩‍💻 Desenvolvedores 
 - <h3>Front</h3> 
  - [github.com/Dnchf](https://github.com/Dnchf)
