@@ -41,9 +41,17 @@ Desenvolver uma plataforma onde os clientes possam:
 ---
 
 ## 👩‍💻 Desenvolvedores 
-- <h3>Front:</h3> 
+- <h3>Front</h3> 
  - [github.com/Dnchf](https://github.com/Dnchf)
  - [github.com/EleniStav](https://github.com/EleniStav)
-- Back:
+- <h3>Back</h3>
+- gabrielsilva.s.c94@gmail.com
+- <H3>Participantes</H3>
+- [github.com/guihh035](https://github.com/guihh035)
+- jefferr419@gmail.com
+- yandornelles33@gmail.com
+- Williansdasilvaa@gmail.com
+- lucas.uchela06@gmail.com
+- ermelyduarte5@gmail.com
 
 
