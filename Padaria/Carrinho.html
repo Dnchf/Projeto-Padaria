@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🛒 Carrinho - Pão de Cada Dia</title>
+  <link rel="stylesheet" href="./Styles/Carrinho style.css" />
+</head>
+<body>
+
+  <header class="header-banner">
+    <div class="header-conteudo">
+      <h1 class="header-titulo">Carrinho de Compras</h1>
+      <p class="header-subtitulo">Confira seus itens abaixo</p>
+    </div>
+  </header>
+
+  <header class="navbar">
+    <div class="navbar-conteudo">
+      <h1 class="navbar-logo">🥖 Pão de Cada Dia</h1>
+      <nav class="navbar-links">
+        <a href="index.html">Início</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="Login.html">Login</a>
+        <span id="navbar-login-area"></span>
+      </nav>
+    </div>
+  </header>
+  <main class="container-carrinho">
+    <div id="itens-carrinho" class="itens-carrinho">
+      <!-- Produtos adicionados vão aparecer aqui -->
+    </div>
+
+    <div class="resumo-carrinho">
+      <h3>Total: <span id="total">R$ 0,00</span></h3>
+      <button class="btn-finalizar">Finalizar Compra</button>
+    </div>
+  </main>
+
+  <script src="carrinho.js"></script>
+</body>
+</html>

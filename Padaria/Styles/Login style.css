@@ -1,0 +1,62 @@
+.acesso-usuario {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
+  }
+  
+  .acesso-usuario a {
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #d2691e;
+    color: white;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .acesso-usuario a:hover {
+    background-color: #a0522d;
+  }
+  
+  .login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: transparent;
+  }
+  
+  .login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  .btn-adicionar, .btn-finalizar {
+    background-color: #ffffff;
+    color: #d2691e;
+    border: 2px solid #d2691e;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-adicionar:hover, .btn-finalizar:hover {
+    background-color: #d2691e;
+    color: white;
+  }
