@@ -34,13 +34,16 @@ Desenvolver uma plataforma onde os clientes possam:
 
 ---
 
-## 🧰 Tecnologias Utilizadas  
-- **HTML5**  <img url=""
-- **CSS3**  
-- **JavaScript**  
-- **Php**
+## 🧰 Tecnologias Utilizadas 
+<img src="https://img.shields.io/badge/-Html5-76240e?style=flat&logo=Html5" height="40"/> <img src="https://img.shields.io/badge/-Css3-00009b?style=flat&logo=Css3" height="40"/> <img src="https://img.shields.io/badge/-VS%20Code-007ACC?style=flat&logo=visual-studio-code" height="40"/> <img src="https://img.shields.io/badge/-JavaScript-ffae19?style=flat&logo=JavaScript" height="40 "/>  <img src="https://img.shields.io/badge/-PHP-004085?style=flat&logo=PHP" height="40 "/>
+
 
 ---
 
-## 👩‍💻 Autor  
-Desenvolvido com carinho para representar o projeto **Pão de Cada Dia**, inspirado no acolhimento, sabor e tradição de uma boa padaria brasileira.  
+## 👩‍💻 Desenvolvedores 
+- <h3>Front:</h3> 
+ - [github.com/Dnchf](https://github.com/Dnchf)
+ - [github.com/EleniStav](https://github.com/EleniStav)
+- Back:
+
+
