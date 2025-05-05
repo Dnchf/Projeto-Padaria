@@ -2,25 +2,39 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Pão de Cada Dia</title>
   <link rel="stylesheet" href="./Styles/Login style.css">
 </head>
 <body>
+<header class="navbar">
+  <div class="navbar-conteudo">
+    <h1 class="navbar-logo">🥖 Pão de Cada Dia</h1>
+    <nav class="navbar-links">
+      <a href="index.html">Início</a>
+      <a href="carrinho.html">Carrinho</a>
+      <a href="Login.html">Login</a>
+      <span id="navbar-login-area"></span>
+    </nav>
+  </div>
+</header>
+
+
   <section class="login-section">
     <div class="login-box">
-      <h2 class="login-titulo">👩‍🍳 Login do Cliente</h2>
-      <form class="login-form" onsubmit="return logar(event)">
+      <h2 class="login-titulo">🍞 Login do Cliente</h2>
+      
+
+      <form action="cadastro.php" method="POST" class="login-form"> 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" required />
+        <input type="email" name="email" id="email" required />
 
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" required />
+        <input type="password" name="senha" id="senha" required />
 
         <button type="submit">Entrar</button>
       </form>
     </div>
   </section>
-
 </body>
 </html>
