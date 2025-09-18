@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+
+background-image: url('https://i.pinimg.com/736x/24/e8/25/24e825137c03ae621b18932689fbc617.jpg');
+}
+
+
+#Modo-escuro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: #fff3e0; 
+  border: 2px solid #d2691e; 
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+#Modo-escuro:hover {
+  background: #d2691e;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+.rotate {
+  animation: girar 0.5s ease;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg) scale(1); }
+  to { transform: rotate(360deg) scale(1.1); }
+}
+
+body, .navbar, .banner-flex, .produto-box, .titulo-produtos, .titulo-conhecer, .banner-bebidas, .banner-doces, .banner-salgados {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+body.dark-mode {
+  background-image: url('./modo\ escuro.png'); 
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+  background-color: #222; 
+}
+
+body.dark-mode .login-box {
+  background-color: #222; 
+}
+body.dark-mode #Entrar {
+  background-color: #686868; 
+  border: 2px solid #686868;
+}
+
+
+
+.acesso-usuario {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
+  }
+      
+  nav ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  .navbar {
+    background-color: #d2691e;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  }
+  
+  .navbar-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .navbar-logo {
+    font-size: 26px;
+    color: white;
+    font-family: 'Brush Script MT', cursive;
+    margin: 0;
+  }
+  
+  .navbar-links a, #navbar-login-area a, #navbar-login-area button {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  
+  #navbar-login-area button {
+    background: transparent;
+    border: 1px solid white;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }  
+
+  
+  .acesso-usuario a {
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #d2691e;
+    color: white;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .acesso-usuario a:hover {
+    background-color: #a0522d;
+  }
+  
+  .login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: transparent;
+  }
+  
+  .login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  .btn-adicionar, .btn-finalizar {
+    background-color: #ffffff;
+    color: #d2691e;
+    border: 2px solid #d2691e;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-adicionar:hover, .btn-finalizar:hover {
+    background-color: #d2691e;
+    color: white;
+  }
+#Entrar {
+    background-color: #d2691e ;
+    color: #ffffff;
+    border: 2px solid #d2691e;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+ 
+.acesso-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: transparent;
+}
+
+.acesso-container {
+  width: 90%;
+  max-width: 400px;
+}
+
+.abas {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.abas button {
+  flex: 1;
+  padding: 12px 0;
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.abas button.active {
+  background-color: #ffffff;
+  color: #d2691e;
+  border: 2px solid #d2691e;
+}
+
+.login-box, .registro-box {
+  display: none;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-box.box-ativa, .registro-box.box-ativa {
+  display: block;
+}
+
+
+body.dark-mode .login-box,
+body.dark-mode .registro-box {
+  background-color: #222;
+}
+
+body.dark-mode #Entrar,
+body.dark-mode #Registrar {
+  background-color: #686868;
+  border: 2px solid #686868;
+  color: white;
+}
+
+body.dark-mode #Entrar:hover,
+body.dark-mode #Registrar:hover {
+  background-color: #d2691e;
+  color: white;
+}
