@@ -26,7 +26,11 @@ Desenvolver uma plataforma onde os clientes possam:
 
 ### 🔐 3. Login  
 - Área para cadastro e autenticação de usuários  
-- Interface amigável e responsiva  
+- Interface amigável e responsiva
+
+### 🥖 Produtos 
+- Todo o cardapio da padaria
+- Adição de produtos ao Carrinho
 
 ### 🛒 4. Carrinho de Compras  
 - Adição e remoção de produtos  
@@ -39,7 +43,21 @@ Desenvolver uma plataforma onde os clientes possam:
 
 ---
 ## 🥖 Imgens do Projeto
-<img src="https://github.com/user-attachments/assets/4a5decec-978d-4afa-ac7f-48e367f07d0a" alt="Imagem 1" width="300"/> <img src="https://github.com/user-attachments/assets/2a99238f-5106-4ee4-a337-b11a90321e0a" alt="Imagem 2" width="300"/>  <img src="https://github.com/user-attachments/assets/f65a0d77-dd4f-49d1-96eb-ed5e3ae7f0e2" alt="Imagem 3" width="300"/>  <img src="https://github.com/user-attachments/assets/97c5d9d0-dcaa-4950-bcb1-9df9ff5a8cc4" alt="Imagem 2" width="300"/>  <img src="https://github.com/user-attachments/assets/514a467e-68c0-40ec-8dda-843fb85b15b1" alt="Imagem 2" width="300"/>
+<img width="300" alt="Pagina Inicial" src="https://github.com/user-attachments/assets/ddff9390-a08c-4def-8fc6-d97adf61d271" />
+<img width="300" alt="Pagina inicial - historia" src="https://github.com/user-attachments/assets/7ded3b06-8588-4256-84f8-65601166f498" />
+<img width="300" alt="Produtos - Salgados" src="https://github.com/user-attachments/assets/70e1f508-1dba-4259-93e2-ee3b5c4d01d5" />
+<img width="300" alt="Produtos - bebidas" src="https://github.com/user-attachments/assets/623dbdaa-620c-4697-b57e-4464e8f9a9f3" />
+<img width="300" alt="Login" src="https://github.com/user-attachments/assets/9ac94180-dc51-4eea-841c-35c2c9e6e338" />
+<img width="300" alt="Carinho" src="https://github.com/user-attachments/assets/47c8e99c-e664-4814-a37c-5568d554c305" />
+
+### 🌙 Modo escuro
+
+<img width="300" alt="Pagina Inicial-modo escuro" src="https://github.com/user-attachments/assets/78670368-6886-4bac-8084-1054d1fbeb5b" />
+<img width="300" alt="Pagina inicial - historia Modo escuro" src="https://github.com/user-attachments/assets/06a33a6b-02c3-4863-a66d-de15f1233ddd" />
+<img width="300" alt="Produtos - Salgados - Modo escuro" src="https://github.com/user-attachments/assets/764e2fc2-5731-460a-825d-40e52f3dc787" />
+<img width="300" alt="Produtos - Bebidas alcoolicas" src="https://github.com/user-attachments/assets/c882e9e3-75af-4c4a-9c51-017eff8b3ce5" />
+<img width="300" alt="Login - Modo escuro" src="https://github.com/user-attachments/assets/d302cc6e-0013-4d60-bf7f-3e8e068aa7c9" />
+<img width="300" alt="Carinho - modo escuro (2)" src="https://github.com/user-attachments/assets/2026602f-7989-4251-a705-f44d79194a66" />
 
 ---
 ## 👩‍💻 Desenvolvedores 
