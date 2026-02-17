@@ -116,7 +116,7 @@
         title: `Bem-vindo, ${usuarioSalvo.nome}! 🥖`
       }).then(() => {
         localStorage.setItem("usuarioLogado", JSON.stringify(usuarioSalvo));
-        window.location.href = "Front-end.html"; // vai pra página principal
+        window.location.href = "index.html"; // vai pra página principal
       });
     } else {
       Swal.fire({
@@ -150,6 +150,7 @@
 
 </body>
 </html>
+
 
 
 
