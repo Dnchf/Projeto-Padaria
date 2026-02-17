@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🛒 Carrinho - Pão de Cada Dia</title>
+  <link rel="stylesheet" href="../Styles/Carrinho style.css " />
+</head>
+
+<body>
+
+  <header class="header-banner">
+    <div class="header-conteudo">
+      <h1 class="header-titulo">Carrinho de Compras</h1>
+      <p class="header-subtitulo">Confira seus itens abaixo</p>
+    </div>
+  </header>
+  <nav class="navbar">
+    <div class="navbar-conteudo">
+      <h1 class="navbar-logo">Padaria Pão de cada Dia</h1>
+
+      <div class="navbar-links" id="navbar-links">
+        <a href="./Front-end.html">Início</a>
+        <a href="Produtos.Html">Produtos</a>
+        <a href="Login.html">Login</a>
+        <a href="Carrinho.html">Carrinho 🛒</a>
+        <button id="Modo-escuro">🌙</button>
+        <div id="navbar-login-area">
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-carrinho">
+    <div id="itens-carrinho" class="itens-carrinho">
+    </div>
+
+    <div class="resumo-carrinho">
+      <h3>Total: <span id="total">R$ 0,00</span></h3>
+      <button class="btn-finalizar">Finalizar Compra</button>
+    </div>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="..//Javascript/produtos.js"></script>
+  <script src="..//Javascript/Carrinho.js"></script>
+  <script src="..//Javascript/Modo-escuro.js"></script>
+
+</body>
+
+</html>

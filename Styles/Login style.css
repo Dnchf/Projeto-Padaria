@@ -1,0 +1,478 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 2.3;
+  background-image: url('./patrón\ plantas\ inspo.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center center;
+  color: #333;
+  padding-top: 80px;
+  transition: background-color 0.3s, color 0.3s;
+
+
+}
+
+body.dark-mode {
+  background-image: url('./modo\ escuro.png');
+  color: #f1f1f1;
+}
+
+#Modo-escuro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: #fff3e0;
+  border: 2px solid #d2691e;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+#Modo-escuro:hover {
+  background: #d2691e;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.rotate {
+  animation: girar 0.5s ease;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+body.dark-mode #Modo-escuro {
+  background: #333;
+  color: #f1f1f1;
+  border-color: #ff7c01;
+}
+
+/* Transições suaves */
+body,
+.navbar,
+.banner-flex,
+.produto-box,
+.titulo-produtos,
+.titulo-conhecer,
+.banner-bebidas,
+.banner-doces,
+.banner-salgados {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+body.dark-mode {
+  background-image: url('./modo\ escuro.png');
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar {
+  background-color: #222;
+}
+
+body.dark-mode .banner-flex {
+  background-color: #222;
+}
+
+
+
+body.dark-mode .produto-box {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .titulo-produtos {
+  color: #ff7c01;
+}
+
+body.dark-mode .titulo-conhecer {
+  color: #ff7c01;
+}
+
+body.dark-mode .banner-salgados {
+  background-color: #222;
+}
+
+body.dark-mode .titulo-doces {
+  background-color: #222;
+  color: #7a76f7;
+}
+
+body.dark-mode .texto-doces {
+  background-color: #222;
+  color: #7a76f7;
+}
+
+body.dark-mode .banner-doces {
+  background-color: #222;
+}
+
+
+body.dark-mode .banner-bebidas {
+  background-color: #222;
+}
+
+body.dark-mode .banner-conhecer {
+  background-color: #222;
+}
+
+
+body.dark-mode .btn-adicionar {
+  background-color: #444;
+  color: #f1f1f1;
+  border-color: #f1f1f1;
+}
+
+body.dark-mode .btn-adicionar:hover {
+  background-color: #f1f1f1;
+  color: #222;
+}
+
+body.dark-mode .footer-novo {
+  background-color: #222;
+}
+
+
+.header-banner {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+    url('https://invexo.com.br/blog/wp-content/uploads/2022/11/paes-padarias-na-barra-da-tijuca-rio-de-janeiro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 0 0 30px 30px;
+}
+
+.header-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.header-conteudo {
+  position: relative;
+  z-index: 2;
+}
+
+.header-titulo {
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.header-subtitulo {
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/* Navbar*/
+.navbar {
+  background-color: #d2691e;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  font-size: 28px;
+  color: white;
+  font-family: 'Brush Script MT', cursive;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-links a:hover {
+  color: #ffa200;
+}
+
+
+#Modo-escuro {
+  margin-left: 15px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-conteudo {
+    flex-wrap: nowrap;
+  }
+
+  .header-banner {
+    background-image: url('https://invexo.com.br/blog/wp-content/uploads/2022/11/paes-padarias-na-barra-da-tijuca-rio-de-janeiro.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .header-conteudo {
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-titulo {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 60px;
+    margin-bottom: 10px;
+  }
+
+  .header-subtitulo {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #d2691e;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  #navbar-login-area {
+    margin-top: 10px;
+  }
+}
+
+body.dark-mode #Modo-escuro {
+  background: #333;
+  color: #f1f1f1;
+  border-color: #ff7c01;
+}
+
+/* Login / Registro */
+.acesso-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.acesso-container {
+  background-color: rgba(255,255,255,0.95);
+  padding: 40px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .acesso-container {
+  background-color: rgba(50,50,50,0.95);
+  color: #f1f1f1;
+}
+
+.abas {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.abas button {
+  flex: 1;
+  padding: 12px 0;
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.abas button.active {
+  background-color: #ffffff;
+  color: #d2691e;
+  border: 2px solid #d2691e;
+}
+
+.login-box,
+.registro-box {
+  display: none;
+}
+
+.box-ativa { display: block; }
+
+.login-form label,
+.registro-form label {
+  display: block;       
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.login-form input,
+.registro-form input {
+  display: block;       
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px; 
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+login-form button,
+.registro-form button {
+  width: 100%;  
+  padding: 10px;
+  border: none;
+  background-color: #d2691e;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px; 
+}
+
+  .btn-adicionar, .btn-finalizar {
+    background-color: #ffffff;
+    color: #d2691e;
+    border: 2px solid #d2691e;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-adicionar:hover, .btn-finalizar:hover {
+    background-color: #d2691e;
+    color: white;
+  }
+#Entrar {
+    background-color: #d2691e ;
+    color: #ffffff;
+    border: 2px solid #d2691e;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .acesso-container { width: 90%; padding: 20px; }
+  .navbar-links { flex-direction: column; gap: 10px; display: none; }
+  .navbar-links.active { display: flex; }
+} 
+.swal2-popup {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 20px !important;
+  background-color: #fce9e1 !important;
+  color: #8b4513 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.swal2-title {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 32px !important;
+  color: #a0522d !important;
+}
+
+.swal2-confirm {
+  background-color: #d2691e !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: bold !important;
+  transition: background-color 0.3s ease;
+}
+
+.swal2-confirm:hover {
+  background-color: #a0522d !important;
+}
+
+.swal2-icon {
+  border-color: #d2691e !important;
+  color: #d2691e !important;
+}
