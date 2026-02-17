@@ -1,0 +1,609 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 2.3;
+  background-image: url('./patrón\ plantas\ inspo.jpg');
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center center;
+  color: #333;
+  padding-top: 80px;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-image: url('./modo\ escuro.png');
+  color: #f1f1f1;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #d2691e;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .navbar {
+  background-color: #222;
+}
+
+.navbar-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar-logo {
+  font-size: 28px;
+  color: white;
+  font-family: 'Brush Script MT', cursive;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-links a:hover {
+  color: #ffa200;
+}
+
+body.dark-mode .produto-box {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .titulo-produtos {
+  color: #ff7c01;
+}
+
+body.dark-mode .btn-adicionar {
+  background-color: #444;
+  color: #f1f1f1;
+  border-color: #f1f1f1;
+}
+
+body.dark-mode .btn-adicionar:hover {
+  background-color: #f1f1f1;
+  color: #222;
+}
+
+body.dark-mode .footer-novo {
+  background-color: #222;
+}
+
+/* Dark Mode Links */
+body.dark-mode .navbar-links a {
+  color: #f1f1f1;
+}
+
+/* Dark Mode Active Links */
+body.dark-mode .navbar-links a:hover {
+  color: #ffa200;
+}
+
+/* Modo Escuro Button */
+#Modo-escuro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: #fff3e0;
+  border: 2px solid #d2691e;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  margin-left: 15px;
+}
+
+#Modo-escuro:hover {
+  background: #d2691e;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.rotate {
+  animation: girar 0.5s ease;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+
+/* Header Banner */
+.header-banner {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)),
+    url('https://invexo.com.br/blog/wp-content/uploads/2022/11/paes-padarias-na-barra-da-tijuca-rio-de-janeiro.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 0 0 30px 30px;
+}
+
+.header-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.header-conteudo {
+  position: relative;
+  z-index: 2;
+}
+
+.header-titulo {
+  font-family: Brush Script MT, cursive;
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.header-subtitulo {
+  font-family: Brush Script MT, cursive;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/*Produtos*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap');
+
+
+.produtos-section {
+  padding: 60px 40px;
+  overflow: hidden;
+}
+
+.titulo-produtos {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.titulo-produtos::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #d2691e, #f4a460);
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+
+.produtos-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+}
+.produtos-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.produtos-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.produtos-grid::-webkit-scrollbar-thumb {
+  background: #d2691e;
+  border-radius: 10px;
+}
+
+.produtos-grid::-webkit-scrollbar-thumb:hover {
+  background: #ff7b00;
+}
+
+.produtos-grid {
+  scrollbar-width: thin;
+  scrollbar-color: #d2691e transparent;
+}
+
+/* --- Card de produto --- */
+.produto-box {
+  min-width: 250px;
+  border-radius: 18px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 18px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.produto-box:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 10px 25px rgba(210, 105, 30, 0.25);
+}
+/* Cores Pães*/
+.paes .produto-box:nth-child(1) {
+  background:linear-gradient(to top,#d2691e,#f79956) ;
+
+}
+.paes .produto-box:nth-child(2) {
+  background:linear-gradient(to top,#f7893b,#fcaa6f) ;
+
+}
+.paes .produto-box:nth-child(3) {
+  background:linear-gradient(to top,#AB6632,#dd8440) ;
+
+}
+.paes .produto-box:nth-child(4) {
+  background:linear-gradient(to top,#c7491b,#ff6730) ;
+
+}
+.paes .produto-box:nth-child(5) {
+  background:linear-gradient(to top,#d2691e,#f79956) ;
+
+}
+.paes .produto-box:nth-child(6) {
+  background:linear-gradient(to top,#A67041,#c9884f) ;
+
+}
+
+/*Salgados*/
+
+.Salgados .produto-box:nth-child(1) {
+  background:linear-gradient(to top,#eb721c,#f88635) ;
+
+}
+.Salgados .produto-box:nth-child(2) {
+  background:linear-gradient(to top,#C35B2C,#e66c34) ;
+
+}
+
+.Salgados .produto-box:nth-child(3) {
+  background:linear-gradient(to top,#F2921D,#ffa434) ;
+
+}
+
+.Salgados .produto-box:nth-child(4) {
+  background:linear-gradient(to top,#A65D03,#da7e0d) ;
+
+}
+
+.Salgados .produto-box:nth-child(5) {
+  background:linear-gradient(to top,#DA8D25,#ffa939) ;
+
+}
+
+.Salgados .produto-box:nth-child(6) {
+  background:linear-gradient(to top,#D9731A,#f7892a) ;
+
+}
+
+/*Doces*/
+
+.Doces .produto-box:nth-child(1) {
+  background:linear-gradient(to top,#591F12,#9e361f) ;
+
+}
+.Doces .produto-box:nth-child(2) {
+  background:linear-gradient(to top,#F29F05,#ffb836) ;
+
+}
+
+.Doces .produto-box:nth-child(3) {
+  background:linear-gradient(to top,#8A4317,#bb5a1e) ;
+
+}
+
+.Doces .produto-box:nth-child(4) {
+  background:linear-gradient(to top,#F2E9BB,#F2E9BB) ;
+
+}
+
+
+.Doces .produto-box:nth-child(5) {
+  background:linear-gradient(to top,#BF4904,#ee681b) ;
+
+}
+
+.Doces .produto-box:nth-child(6) {
+  background:linear-gradient(to top,#a1f75b,#c1f794) ;
+
+}
+.Doces .produto-box:nth-child(7) {
+  background:linear-gradient(to top,#73020C,#BF0413) ;
+
+}
+.Doces .produto-box:nth-child(8) {
+  background:linear-gradient(to top,#D99748,#f3b366) ;
+
+}
+.Doces .produto-box:nth-child(9) {
+  background:linear-gradient(to top,#DEAE63,#f8cc84) ;
+
+}
+.Doces .produto-box:nth-child(10) {
+  background:linear-gradient(to top,#D93F07,#f15820) ;
+
+}
+
+/*Bebidas*/
+
+.bebidas .produto-box:nth-child(1) {
+  background:linear-gradient(to top,#591F12,#9e361f) ;
+
+}
+.bebidas .produto-box:nth-child(2) {
+  background:linear-gradient(to top,#8A4317,#bb5a1e) ;
+
+}
+
+.bebidas .produto-box:nth-child(3) {
+  background:linear-gradient(to top,#f03434,#F25252) ;
+
+}
+
+.bebidas .produto-box:nth-child(4) {
+  background:linear-gradient(to top,#8C071F,#c40d2e) ;
+
+}
+
+
+.bebidas .produto-box:nth-child(5) {
+  background:linear-gradient(to top,#8C5549,#b46f5f) ;
+
+}
+
+.bebidas .produto-box:nth-child(6) {
+  background:linear-gradient(to top,#B0752F,#ce8e40) ;
+
+}
+
+/*Alcoolica*/
+
+
+.alcoólica .produto-box:nth-child(1) {
+  background:linear-gradient(to top,#590209,#91020e) ;
+
+}
+.alcoólica .produto-box:nth-child(2) {
+  background:linear-gradient(to top,#A68B03,#A69B03) ;
+
+}
+
+.alcoólica .produto-box:nth-child(3) {
+  background:linear-gradient(to top,#E7A191,#fac3b7) ;
+
+}
+
+.alcoólica .produto-box:nth-child(4) {
+  background:linear-gradient(to top,#591302,#992f05) ;
+
+}
+
+
+.alcoólica .produto-box:nth-child(5) {
+  background:linear-gradient(to top,#2B1509,#5a2b12) ;
+
+}
+
+.alcoólica .produto-box:nth-child(6) {
+  background:linear-gradient(to top,#9E6900,#d48e02) ;
+
+}
+
+
+
+
+/* Imagem */
+.produto-box img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  transition: transform 0.4s ease;
+}
+
+.produto-box:hover img {
+  transform: scale(1.08);
+}
+
+
+/* Texto Produtos */
+.produto-box h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.produto-box span {
+  font-weight: 600;
+  display: block;
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* Botão Produtos */
+.btn-adicionar {
+  background: linear-gradient(90deg, #d2691e, #ffb347);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(210, 105, 30, 0.2);
+}
+
+.btn-adicionar:hover {
+  background: linear-gradient(90deg, #ff7b00, #d2691e);
+  transform: scale(1.07);
+  box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+}
+
+/* --- Animação suave na entrada --- */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.produto-box {
+  animation: aparecer 0.8s ease forwards;
+}
+
+
+
+/* Footer */
+.footer-novo {
+  background-color: #d2691e;
+  color: white;
+  padding: 15px 30px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-conteudo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-coluna {
+  flex: 1;
+  min-width: 220px;
+  margin: 10px 20px;
+}
+
+.footer-coluna h3,
+.footer-coluna h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.footer-coluna ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-coluna ul li {
+  margin-bottom: 5px;
+}
+
+.footer-coluna ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-coluna ul li a:hover {
+  color: #ffe4c4;
+}
+
+.footer-copy {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+}
+
+.swal2-popup {
+  font-family: 'Poppins', sans-serif;
+  border-radius: 20px !important;
+  background-color: #fce8e0 !important;
+  color: #8b4513 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.swal2-title {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 32px !important;
+  color: #a0522d !important;
+}
+
+.swal2-confirm {
+  background-color: #d2691e !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: bold !important;
+  transition: background-color 0.3s ease;
+}
+
+.swal2-confirm:hover {
+  background-color: #a0522d !important;
+}
+
+.swal2-icon {
+  border-color: #d2691e !important;
+  color: #d2691e !important;
+}
