@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Padaria Pão de Cada Dia</title>
+    <link rel="stylesheet" href="..//Styles/Produtos styles.css ">
+</head>
+
+<body>
+    <div class="header-banner">
+        <div class="header-conteudo">
+            <h1 class="header-titulo">Produtos da nossa Padaria</h1>
+            <p class="header-subtitulo">Conheça o nosso delicioso cardapio </p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="navbar-conteudo">
+            <h1 class="navbar-logo">Padaria Pão de cada Dia</h1>
+
+            <div class="navbar-links" id="navbar-links">
+                <a href="./Front-end.html">Início</a>
+                <a href="Produtos.Html">Produtos</a>
+                <a href="Login.html">Login</a>
+                <a href="Carrinho.html">Carrinho 🛒</a>
+                <button id="Modo-escuro">🌙</button>
+                <div id="navbar-login-area">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+        <section class="produtos-section paes">
+            <h2 class="titulo-produtos">🥖 Pães </h2>
+            <div class="produtos-grid">
+                <article class="produto-box">
+                    <img src="..//Imagens/pao-frances.webp" alt="Pão Francês" class="produto-img">
+                    <h3>Pão Francês</h3>
+                    <span>R$ 0,80/un</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Pão Francês', 0.80)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://essareceitafunciona.com.br/wp-content/uploads/2022/07/Pao-de-queijo-Essa-Receita-Funciona-9.jpg"
+                        alt="Pão de queijo" class="produto-img">
+                    <h3>Pão de queijo</h3>
+                    <span>R$ 1,50/un</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Pão de queijo', 1.50)">Adicionar</button>
+                </article>
+
+
+
+                <article class="produto-box">
+                    <img src="https://i.panelinha.com.br/i1/bk-8869-img-9965.webp" alt="Pão-Australiano"
+                        class="produto-img">
+                    <h3>Pão australiano</h3>
+                    <span>R$ 4,00/un</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Pão-Australiano', 4.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="..//Imagens/brioche_IMG_4615.jpg" alt="Brioche" class="produto-img">
+                    <h3>Brioche</h3>
+                    <span>R$ 3,50/un</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Brioche', 3.50)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://cdn.awsli.com.br/800x800/715/715084/produto/31675083/pre-mistura-baguete-francesa-via-pane-10kg-2f558b2f.jpg"
+                        alt="Baguete" class="produto-img">
+                    <h3>Baguete</h3>
+                    <span>R$ 7.00/un</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Baguete', 7.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://images.squarespace-cdn.com/content/v1/57a8cde9cd0f6802d25882f4/1680192329067-PV5ES9DJJ52M9Z0BI1RS/a-fornada-padaria-paes-artesanais-11.jpg"
+                        alt="Pães Artesanais" class="produto-img">
+                    <h3>Pães Artesanais</h3>
+                    <span>R$ 4,50/un</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Pães Artesanais', 4.50)">Adicionar</button>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="produtos-section Salgados">
+            <h2 class="titulo-produtos">Salgados</h2>
+            <div class="produtos-grid">
+                    <article class="produto-box">
+                        <img src="https://www.receitas-sem-fronteiras.com/media/86139_highlight-35_crop.jpg/rh/coxinha-de-frango.jpg"
+                            alt="Coxinha-De-Frango" class="produto-img">
+                        <h3>Coxinha classica</h3>
+                        <span>R$ 1,50/un</span>
+                        <button class="btn-adicionar"
+                            onclick="adicionarAoCarrinho('Coxinha-De-Frango', 1.50)">Adicionar</button>
+                    </article>
+
+
+                <article class="produto-box">
+                    <img src="https://essareceitafunciona.com.br/wp-content/uploads/2022/12/Enroladinho-de-presunto-e-queijo-Essa-Receita-Funciona-9.jpg"
+                        alt="Enroladinho" class="produto-img">
+                    <h3>Enroladinho</h3>
+                    <span>R$ 4,00/un</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Enroladinho', 4.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://i.ytimg.com/vi/IzDymxISZ00/maxresdefault.jpg" alt="Folhado-de-frango"
+                        class="produto-img">
+                    <h3>Folhado de frango</h3>
+                    <span>R$ 5,50/un</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Folhado-de-frango', 5.50)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8KhWOEaWQrqnMHsuHfCxJh-BVVpzxVvKWXA&s"
+                        alt="Misto-quente" class="produto-img">
+                    <h3>Misto quente</h3>
+                    <span>R$ 6,00/un</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Misto-quente', 6.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://receitadelicia.com.br/wordpress/wp-content/files/receitadelicia.com.br/2024/12/receita-de-risole-de-camarao.webp"
+                        alt="Risole-de-camarão" class="produto-img">
+                    <h3>Risole de camarão</h3>
+                    <span>R$ 4,50/un</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Risole-de-camarão', 4.50)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://i.ytimg.com/vi/2GcMlntT5aI/maxresdefault.jpg" alt="Croissant-salgado"
+                        class="produto-img">
+                    <h3>Croissant salgado</h3>
+                    <span>R$ 3,50/un</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Croissant-salgado', 3.50)">Adicionar</button>
+                </article>
+
+                </articule>
+            </div>
+        </section>
+
+        <section class="produtos-section Doces">
+            <h2 class="titulo-produtos">🍰 Doces & Bolos</h2>
+            <div class="produtos-grid">
+                <article class="produto-box">
+                    <img src="..//Imagens/brownie-com-sorvete.webp" alt="Brownie" class="produto-img">
+                    <h3>Brownie</h3>
+                    <span>R$ 4,30</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Brownie', 4.30)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://recipesblob.oetker.com.br/assets/11ed1b54a18b427ea8e7f7d141f0a34d/1272x764/bolo_cenoura_horizontal.webp"
+                        alt="Bolo de Cenoura" class="produto-img">
+                    <h3>Bolo de Cenoura</h3>
+                    <span>R$ 12,00/fatia</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Bolo de Cenoura', 12.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://www.unileverfoodsolutions.com.br/dam/global-ufs/mcos/SLA/calcmenu/recipes/BR-recipes/desserts-&-bakery/torta-holandesa/main-header.jpg"
+                        alt="Torta-holandesa" class="produto-img">
+                    <h3>Torta holandesa</h3>
+                    <span>R$ 14,00/fatia</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Torta-holandesa', 14.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://images.mrcook.app/recipe-image/019499f0-dc98-7e43-aaab-f42e61d0ff80?cacheKey=RnJpLCAyNCBKYW4gMjAyNSAyMDoxMToyOSBHTVQ="
+                        alt="Bolo de Coco" class="produto-img">
+                    <h3>Bolo de Coco</h3>
+                    <span>R$ 12,00/fatia</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Bolo de Coco', 12.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZnAWLXKVH7I9194tnIFU5_5BvNUKibSJlog&s"
+                        alt="folhado-de-goiabada" class="produto-img">
+                    <h3>Folhado goiabada</h3>
+                    <span>R$ 10,00/un</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('folhado-de-goiabada', 10.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://www.receitasnestle.com.br/sites/default/files/srh_recipes/1d22d96039f98608bc9338debb1b4579.jpg"
+                        alt="Torta-de-limão" class="produto-img">
+                    <h3>Torta de limão</h3>
+                    <span>R$ 14,00/fatia</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Torta-de-limão', 14.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://s2-receitas.glbimg.com/WUicCu4BG23D98vsXjO3xp_IjDY=/0x0:1920x1591/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2023/D/x/YfCQJCQBAmppGZwE2VaQ/conheca-a-origem-do-cheesecake.jpg"
+                        alt="Cheesecake" class="produto-img">
+                    <h3>Cheesecake</h3>
+                    <span>R$ 14,00/fatia</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Cheesecake', 14.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://cms.cooknenjoy.com/wp-content/uploads/2024/08/Torta-Mil-Folhas-01-1200x676.jpg"
+                        alt="Mil-folhas" class="produto-img">
+                    <h3>Mil-folhas</h3>
+                    <span>R$ 14,00/fatia</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Mil-folhas', 14.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://claudia.abril.com.br/wp-content/uploads/2020/02/receita-sonho-doce-1.jpg?quality=70&strip=info?crop=1&resize=1212,909"
+                        alt="Sonho" class="produto-img">
+                    <h3>Sonho</h3>
+                    <span>R$ 10,00</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Sonho', 10.00)">Adicionar</button>
+                </article>
+                <article class="produto-box">
+                    <img src="https://lirp.cdn-website.com/33406c6e/dms3rep/multi/opt/historia-do-croissant-1920w.jpg"
+                        alt="Croissant " class="produto-img">
+                    <h3>Croissant </h3>
+                    <span>R$ 13,00/fatia</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Croissant ', 13.00)">Adicionar</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="produtos-section bebidas">
+            <h2 class="titulo-produtos">☕ Bebidas</h2>
+            <div class="produtos-grid">
+                <article class="produto-box">
+                    <img src="https://blog.bicafebrasil.com.br/wp-content/uploads/2023/07/cafe-preto-1.jpg"
+                        alt="Café Artesanal" class="produto-img">
+                    <h3>Café Artesanal</h3>
+                    <span>R$ 5,00</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Café Artesanal', 5.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://sachefmio.blob.core.windows.net/fotos/cappuccino-de-chocolate-200ml-d29d6431-e81e-4825-a88c-420b2db57f18.jpg"
+                        alt="Cappuccino-com-chocolate" class="produto-img">
+                    <h3>Cappuccino com chocolate</h3>
+                    <span>R$ 6,00</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Cappuccino-com-chocolate', 6.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://www.santolegume.com.br/wp-content/uploads/suco-melancia-morango-1-1.jpg"
+                        alt="Suco-de-Melancia" class="produto-img">
+                    <h3>Suco de Melancia</h3>
+                    <span>R$ 4,00</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Suco-de-Melancia', 4.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://cdn.outback.com.br/wp-data/wp-content/uploads/2018/10/LaraMora-Tagme.jpg"
+                        alt="LaraMora-Tagme" class="produto-img">
+                    <h3>Suco LaraMora</h3>
+                    <span>R$ 6,00</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('LaraMora-Tagme', 6.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8QOPt2n3eUEBY7Mn9wz0PXw0tEEKFwFQhxQ&s"
+                        alt="Café gelado com chocolate" class="produto-img">
+                    <h3>Café gelado com chocolate</h3>
+                    <span>R$ 6,00</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Café gelado com chocolate', 8.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://lonegoosebakery.com/wp-content/uploads/2025/04/main-caramel-frappuccino-image-500x375.jpg"
+                        alt="Frappuccino" class="produto-img">
+                    <h3>Frappuccino</h3>
+                    <span>R$ 8,00</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Frappuccino', 8.00)">Adicionar</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="produtos-section alcoólica">
+            <h2 class="titulo-produtos">🍷 Bebidas alcoólica</h2>
+            <div class="produtos-grid">
+                <article class="produto-box">
+                    <img src="https://static.wixstatic.com/media/a037bb_0a29f6c9922044cbbe8c157d8e7b032d~mv2.jpg/v1/fill/w_480,h_580,al_c,lg_1,q_80,enc_avif,quality_auto/a037bb_0a29f6c9922044cbbe8c157d8e7b032d~mv2.jpg"
+                        alt="Vinho" class="produto-img">
+                    <h3>Vinho tinto</h3>
+                    <span>R$ 55,00/Garaf</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Vinho', 55.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://www.seara.com.br/wp-content/uploads/2025/09/caipirinha-de-kiwi-veja-como-preparar-esse-drink-saboroso-e-refrescante.webp"
+                        alt="Caipirinha" class="produto-img">
+                    <h3>Caipirinha</h3>
+                    <span>R$ 20,00/cop</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Caipirinha', 20.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://ogimg.infoglobo.com.br/in/24031314-ab6-e1b/FT1086A/Foto-Bar-Leblon_Vinho-Rose_Credito-Nishihama_Divulgacao.jpg"
+                        alt="Vinho rose" class="produto-img">
+                    <h3>Vinho Rose </h3>
+                    <span>R$ 60,00/Garf</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Vinho Rose', 60.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxv1hMhDl1-lo-jsJ9JU1eGC4Io4iTm6rLNw&s"
+                        alt="Cerveja Artesanal" class="produto-img">
+                    <h3>Cerveja Artesanal</h3>
+                    <span>R$ 40,00/Garf</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Cerveja Artesanal', 40.00)">Adicionar</button>
+                </article>
+
+
+                <article class="produto-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuSgv8nQ3F4s7JAPAxEdMUa9igpR8Y3o9eMQ&s"
+                        alt="Licor" class="produto-img">
+                    <h3>Licor</h3>
+                    <span>R$ 70,00/Garf</span>
+                    <button class="btn-adicionar" onclick="adicionarAoCarrinho('Licor', 70.00)">Adicionar</button>
+                </article>
+
+                <article class="produto-box">
+                    <img src="https://flordejambu.com/wp-content/uploads/2022/09/historia-do-hidromel-1-1024x1024.png"
+                        alt="Hidromel artesanal" class="produto-img">
+                    <h3>Hidromel </h3>
+                    <span>R$ 55,00/Garaf</span>
+                    <button class="btn-adicionar"
+                        onclick="adicionarAoCarrinho('Hidromel artesanal', 55.00)">Adicionar</button>
+                </article>
+
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <footer class="footer-novo">
+        <div class="footer-conteudo">
+            <div class="footer-coluna">
+                <h3>🍞 Pão de Cada Dia</h3>
+                <p>Tradicional, acolhedora e cheia de sabor desde 2022.</p>
+            </div>
+            <div class="footer-coluna">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="Carrinho.html">Carrinho</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-coluna">
+                <h4>Contato</h4>
+                <p>📍 Rua dos Padeiros, 123<br>📞 (11) 99999-9999<br>📧 contato@paodecadadia.com</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 Pão de Cada Dia - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="./produtos.js"></script>
+    <script src="./Modo-escuro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
