@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projeto padaria Pão de Cada Dia</title>
   <link rel="stylesheet" href="./Styles/styles.css ">
+  <Link rel="stylesheet" href="Styles/stylechatbot.css">
 </head>
 
 <body>
@@ -18,7 +19,7 @@
   <nav class="navbar">
     <div class="navbar-conteudo">
       <h1 class="navbar-logo">Padaria Pão de cada Dia</h1>
-  
+
       <div class="navbar-links" id="navbar-links">
         <a href="index.html">Início</a>
         <a href="Produtos.Html">Produtos</a>
@@ -30,7 +31,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!--Historia da padaria -->
   <section class="banner-flex">
     <div class="banner-texto">
@@ -158,13 +159,24 @@
           <p>&copy; 2025 Pão de Cada Dia - Todos os direitos reservados</p>
         </div>
       </footer>
+
+      <!--CHAT-BOT-->
+
+      <div id="chatbot-icone">🤖</div>
+
+      <!--caixa do chatbot-->
+      <div id="chatbot-container">
+        <div id="Chatbot-hearder"> Atendimento</div>
+
+        <div id="chatbot-mensagens"></div>
+
+        <input type="text" id="chatbot-input" placeholder="Digite sua mensagem...">
+
+      </div>
       <script src="Javascript/produtos.js"></script>
       <script src="Javascript/Modo-escuro.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="Javascript/chatbot.js"></script>
 </body>
 
 </html>
-
-
-
-
