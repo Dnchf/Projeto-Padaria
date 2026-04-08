@@ -57,12 +57,12 @@ body {
 /* Usuário */
 .user {
   align-self: flex-end;
-  background: #be7a04;
-  padding: 10px;
-  border-radius: 10px;
+  background: #ff9900;
+  padding: 10px 14px;
+  border-radius: 15px;
   max-width: 70%;
+  word-wrap: break-word;
 }
-
 /* Bot */
 .bot {
   align-self: flex-start;
