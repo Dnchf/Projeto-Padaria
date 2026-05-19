@@ -1,0 +1,14 @@
+# Chave da API — NUNCA enviar ao GitHub
+.env
+.env.local
+.env*.local
+
+# Vercel
+.vercel
+
+# Dependências
+node_modules
+
+# Sistema
+.DS_Store
+Thumbs.db
