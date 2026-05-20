@@ -3,9 +3,9 @@
 // ══════════════════════════════════════════════════════════════════════════════
 const CONFIG = {
 
-  GEMINI_MODEL: "",
+  GEMINI_MODEL: "gemini-3-flash-preview",
 
-  MAX_HISTORICO: 5,
+  MAX_HISTORICO: 3, 
 };
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -266,12 +266,17 @@ function respostaFallback(texto) {
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
-//  🌐  CHAMADA À API DO GEMINI
+//  🌐  CHAMADA À API DO GEMINI — COM STREAMING
 // ══════════════════════════════════════════════════════════════════════════════
 // Histórico no formato Gemini: [{role:"user"|"model", parts:[{text:"..."}]}]
 let historicoGemini = [];
 
-async function chamarGemini(textoUsuario) {
+/**
+ * Chama a API do Gemini com streaming SSE.
+ * Chama onChunk(textoAcumulado) a cada novo pedaço recebido,
+ * e retorna a string completa ao terminar.
+ */
+async function chamarGemini(textoUsuario, onChunk) {
   // Monta a mensagem do usuário com contexto de tempo injetado
   const mensagemComContexto = `${contextoTempo()}\n\nUsuário: ${textoUsuario}`;
 
@@ -283,7 +288,6 @@ async function chamarGemini(textoUsuario) {
     historicoGemini = historicoGemini.slice(-CONFIG.MAX_HISTORICO * 2);
   }
 
-  // Chama o proxy seguro — a chave fica no servidor
   const url = "/api/gemini";
 
   const body = {
@@ -292,7 +296,7 @@ async function chamarGemini(textoUsuario) {
     },
     contents: historicoGemini,
     generationConfig: {
-      temperature: 0.7,
+      temperature: 0.4,       // Reduzido de 0.7 → 0.4: respostas mais diretas e rápidas
       maxOutputTokens: 1024,
       topP: 0.9,
       topK: 40,
@@ -305,7 +309,10 @@ async function chamarGemini(textoUsuario) {
     ],
   };
 
-  const res = await fetch(url, {
+  // ── Tenta streaming primeiro ──────────────────────────────────────────────
+  const urlStream = url + (url.includes("?") ? "&" : "?") + "alt=sse";
+
+  const res = await fetch(urlStream, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
@@ -316,50 +323,104 @@ async function chamarGemini(textoUsuario) {
     throw new Error(err?.error?.message || `HTTP ${res.status}`);
   }
 
-  const data = await res.json();
+  // Verifica se o servidor realmente devolveu SSE
+  const contentType = res.headers.get("content-type") || "";
+  const isSSE = contentType.includes("text/event-stream");
+
+  // ── Modo streaming (SSE) ──────────────────────────────────────────────────
+  if (isSSE && res.body) {
+    const reader  = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer    = "";
+    let acumulado = "";
+    let finishReason = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+
+      buffer += decoder.decode(value, { stream: true });
+      const linhas = buffer.split("\n");
+      buffer = linhas.pop(); // última linha pode estar incompleta
+
+      for (const linha of linhas) {
+        if (!linha.startsWith("data:")) continue;
+        const jsonStr = linha.slice(5).trim();
+        if (jsonStr === "[DONE]") break;
+
+        try {
+          const obj = JSON.parse(jsonStr);
+          const candidate = obj?.candidates?.[0];
+          const texto = candidate?.content?.parts?.[0]?.text || "";
+          finishReason = candidate?.finishReason || finishReason;
+
+          if (texto) {
+            acumulado += texto;
+            onChunk && onChunk(acumulado);
+          }
+        } catch (_) { /* chunk malformado, ignora */ }
+      }
+    }
+
+    // Trata corte por MAX_TOKENS
+    if (finishReason === "MAX_TOKENS") {
+      acumulado = acumulado.trim() + "...\n\n📞 Para mais detalhes, ligue: " + PADARIA.telefone;
+      onChunk && onChunk(acumulado);
+    }
+
+    historicoGemini.push({ role: "model", parts: [{ text: acumulado }] });
+    return acumulado.trim();
+  }
+
+  // ── Fallback: resposta JSON normal (sem streaming) ────────────────────────
+  const data      = await res.json();
   const candidate = data?.candidates?.[0];
   const resposta  = candidate?.content?.parts?.[0]?.text;
   const finishReason = candidate?.finishReason;
 
   if (!resposta) throw new Error("Resposta vazia da API");
 
-  // Se a IA foi cortada pelo limite de tokens, avisa o usuário de forma elegante
   if (finishReason === "MAX_TOKENS") {
     const respostaTratada = resposta.trim() + "...\n\n📞 Para mais detalhes, ligue: " + PADARIA.telefone;
     historicoGemini.push({ role: "model", parts: [{ text: respostaTratada }] });
+    onChunk && onChunk(respostaTratada);
     return respostaTratada;
   }
 
-  // Salva resposta da IA no histórico
   historicoGemini.push({ role: "model", parts: [{ text: resposta }] });
-
+  onChunk && onChunk(resposta.trim());
   return resposta.trim();
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
 //  🧠  PROCESSADOR PRINCIPAL
 // ══════════════════════════════════════════════════════════════════════════════
-let modoFallback = false; // ativa fallback permanente se API falhar repetidamente
+let modoFallback = false;
 let falhasConsecutivas = 0;
 
-async function processarMensagem(texto) {
-  if (modoFallback) return respostaFallback(texto);
+async function processarMensagem(texto, onChunk) {
+  if (modoFallback) {
+    const r = respostaFallback(texto);
+    onChunk && onChunk(r);
+    return r;
+  }
 
   try {
-    const resposta = await chamarGemini(texto);
+    const resposta = await chamarGemini(texto, onChunk);
     falhasConsecutivas = 0;
     return resposta;
   } catch (erro) {
     falhasConsecutivas++;
     console.warn(`[Chatbot] Falha na API (${falhasConsecutivas}x):`, erro.message);
 
-    // Após 3 falhas consecutivas, entra em modo fallback permanente
     if (falhasConsecutivas >= 3) {
       modoFallback = true;
       console.warn("[Chatbot] Modo fallback ativado permanentemente.");
     }
 
-    return respostaFallback(texto);
+    const r = respostaFallback(texto);
+    onChunk && onChunk(r);
+    return r;
   }
 }
 
@@ -457,6 +518,32 @@ function adicionarBolha(html, tipo) {
   `;
   msgs.appendChild(wrap);
   msgs.scrollTop = msgs.scrollHeight;
+  return wrap;
+}
+
+/**
+ * Cria uma bolha de bot vazia e retorna uma função para atualizar seu conteúdo.
+ * Usada durante o streaming para atualizar o texto em tempo real.
+ */
+function criarBolhaStreaming() {
+  const wrap = document.createElement("div");
+  wrap.className = "bolha-wrap bot";
+  wrap.innerHTML = `
+    <div class="bolha-inner">
+      <div class="mini-avatar">🥐</div>
+      <div class="bolha"></div>
+    </div>
+    <span class="hora">${horaAtual()}</span>
+  `;
+  msgs.appendChild(wrap);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  const bolhaEl = wrap.querySelector(".bolha");
+
+  return function atualizarTexto(textoAcumulado) {
+    bolhaEl.innerHTML = textoAcumulado.replace(/\n/g, "<br>");
+    msgs.scrollTop = msgs.scrollHeight;
+  };
 }
 
 function mostrarDigitando() {
@@ -506,7 +593,7 @@ function mensagemBoaVinda() {
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
-//  📨  ENVIO DE MENSAGEM
+//  📨  ENVIO DE MENSAGEM — com suporte a streaming
 // ══════════════════════════════════════════════════════════════════════════════
 let enviando = false;
 
@@ -523,12 +610,26 @@ async function enviar(textoFixo) {
 
   esconderMenu();
   adicionarBolha(texto, "usuario");
+
+  // Mostra "digitando..." enquanto aguarda o primeiro chunk
   mostrarDigitando();
+  let primeiroChunk = true;
+  let atualizarBolha = null;
 
   try {
-    const resposta = await processarMensagem(texto);
-    removerDigitando();
-    adicionarBolha(resposta, "bot");
+    await processarMensagem(texto, (textoAcumulado) => {
+      // No primeiro chunk: remove "digitando" e cria bolha de streaming
+      if (primeiroChunk) {
+        removerDigitando();
+        atualizarBolha = criarBolhaStreaming();
+        primeiroChunk = false;
+      }
+      atualizarBolha(textoAcumulado);
+    });
+
+    // Se nenhum chunk chegou (erro silencioso), garante que "digitando" foi removido
+    if (primeiroChunk) removerDigitando();
+
     atualizarStatus();
   } catch (e) {
     removerDigitando();
