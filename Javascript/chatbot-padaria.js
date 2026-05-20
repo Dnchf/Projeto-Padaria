@@ -297,7 +297,7 @@ async function chamarGemini(textoUsuario, onChunk) {
     contents: historicoGemini,
     generationConfig: {
       temperature: 0.4,       // Reduzido de 0.7 → 0.4: respostas mais diretas e rápidas
-      maxOutputTokens: 1024,
+      maxOutputTokens: 2048,
       topP: 0.9,
       topK: 40,
     },
