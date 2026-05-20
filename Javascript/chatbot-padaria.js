@@ -3,9 +3,9 @@
 // ══════════════════════════════════════════════════════════════════════════════
 const CONFIG = {
 
-  GEMINI_MODEL: "gemini-3-flash-preview",
+  GEMINI_MODEL: "gemini-3-flash-preview",   
 
-  MAX_HISTORICO: 10,
+  MAX_HISTORICO: 5,                   
 };
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -287,14 +287,16 @@ async function chamarGemini(textoUsuario) {
   const url = "/api/gemini";
 
   const body = {
+    model: CONFIG.GEMINI_MODEL,         // ✅ modelo agora é enviado ao proxy
     system_instruction: {
       parts: [{ text: buildSystemPrompt() }],
     },
     contents: historicoGemini,
     generationConfig: {
       temperature: 0.7,
-      maxOutputTokens: 2048,
+      maxOutputTokens: 512,             // ✅ reduzido de 2048 → respostas mais rápidas
       topP: 0.9,
+      topK: 40,                         // ✅ adicionado → acelera a inferência
     },
     safetySettings: [
       { category: "HARM_CATEGORY_HARASSMENT",        threshold: "BLOCK_NONE" },
